@@ -1,75 +1,332 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Landing Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .hero {
-      background: linear-gradient(135deg, #4e73df, #1cc88a);
-      color: white;
-      padding: 100px 20px;
-    }
+<title>Fivedest | Arquitectura, Diseño e Ingeniería</title>
+<meta name="description" content="Fivedest es una firma de arquitectura, diseño e ingeniería en Toluca especializada en proyectos residenciales, comerciales e industriales con metodología BIM.">
 
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
+<style>
+:root{
+--primary:#111111;
+--secondary:#f6f6f6;
+--accent:#8a8a8a;
+--text:#333333;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: white;
-      color: #4e73df;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .section {
-      padding: 60px 20px;
-    }
+body{
+font-family:'Inter', sans-serif;
+color:var(--text);
+background:white;
+line-height:1.8;
+}
 
-    footer {
-      background: #f8f9fc;
-      padding: 20px;
-      font-size: 14px;
-    }
-  </style>
+h1,h2,h3{
+font-family:'Cormorant Garamond', serif;
+color:var(--primary);
+letter-spacing:1px;
+}
+
+section{
+padding:120px 12%;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+/* NAVBAR */
+header{
+position:fixed;
+width:100%;
+background:white;
+border-bottom:1px solid #eaeaea;
+z-index:1000;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 12%;
+}
+
+.logo{
+font-size:22px;
+font-weight:600;
+letter-spacing:2px;
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:var(--primary);
+font-size:14px;
+font-weight:500;
+text-transform:uppercase;
+}
+
+nav a:hover{
+color:var(--accent);
+}
+
+/* HERO */
+.hero{
+height:85vh;
+background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
+display:flex;
+align-items:center;
+}
+
+.hero-overlay{
+background:rgba(255,255,255,0.88);
+padding:80px;
+max-width:650px;
+margin-left:12%;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:16px;
+margin-bottom:30px;
+}
+
+.btn{
+padding:12px 28px;
+border:1px solid var(--primary);
+text-decoration:none;
+color:var(--primary);
+font-size:14px;
+letter-spacing:1px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:var(--primary);
+color:white;
+}
+
+/* SECCIÓN TÍTULO */
+.section-title{
+margin-bottom:70px;
+max-width:600px;
+}
+
+.section-title h2{
+font-size:36px;
+margin-bottom:15px;
+}
+
+/* PORTAFOLIO */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:60px;
+}
+
+.project img{
+width:100%;
+height:280px;
+object-fit:cover;
+margin-bottom:20px;
+}
+
+.project h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+/* NOSOTROS */
+.bg-light{
+background:var(--secondary);
+}
+
+/* SERVICIOS */
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+}
+
+.service{
+padding:30px;
+border:1px solid #eaeaea;
+}
+
+.service i{
+font-size:20px;
+margin-bottom:15px;
+color:var(--primary);
+}
+
+/* CONTACTO */
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+}
+
+form input, form textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+}
+
+footer{
+background:var(--primary);
+color:white;
+text-align:center;
+padding:50px 12%;
+font-size:14px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25d366;
+color:white;
+padding:16px;
+border-radius:50%;
+font-size:20px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+.hero-overlay{
+margin:0 20px;
+}
+.contact{
+grid-template-columns:1fr;
+}
+}
+</style>
 </head>
+
 <body>
 
-  <section class="hero">
-    <h1>Impulsa tu Negocio</h1>
-    <p>Landing page profesional creada en HTML</p>
-    <a href="#contacto" class="btn">Contáctanos</a>
-  </section>
+<header>
+<div class="navbar">
+<div class="logo">FIVEDEST</div>
+<nav>
+<a href="#trabajo">Trabajo</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
 
-  <section class="section">
-    <h2>Sobre Nosotros</h2>
-    <p>Ofrecemos soluciones digitales para ayudarte a crecer.</p>
-  </section>
+<section class="hero">
+<div class="hero-overlay">
+<h1>Arquitectura con visión estratégica</h1>
+<p>Firma de arquitectura, diseño e ingeniería fundada en Toluca en 2021, especializada en soluciones residenciales, comerciales e industriales mediante metodología BIM y tecnología de punta.</p>
+<a href="#contacto" class="btn">Solicitar Asesoría</a>
+</div>
+</section>
 
-  <section class="section" id="contacto">
-    <h2>Contacto</h2>
-    <p>Email: contacto@tusitio.com</p>
-  </section>
+<section id="trabajo">
+<div class="container">
+<div class="section-title">
+<h2>Nuestro Trabajo</h2>
+<p>Desarrollamos proyectos que integran funcionalidad, precisión técnica y visión arquitectónica contemporánea.</p>
+</div>
 
-  <footer>
-    © 2026 Mi Empresa - Todos los derechos reservados
-  </footer>
+<div class="grid">
+<div class="project">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<h3>Casa Diana</h3>
+<p>Optimización espacial en terreno compacto priorizando iluminación natural, seguridad y composición volumétrica sobria.</p>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
+<h3>Casa MTP</h3>
+<p>Vivienda progresiva diseñada con criterios de crecimiento futuro y accesibilidad económica.</p>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<h3>Casa TG21</h3>
+<p>Residencia campestre que integra arquitectura contemporánea con elementos vernáculos mexicanos.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="nosotros" class="bg-light">
+<div class="container">
+<div class="section-title">
+<h2>Nosotros</h2>
+<p>Fivedest es una firma fundada en 2021 en Toluca con la misión de mejorar entornos humanos mediante arquitectura estratégica, tecnología y responsabilidad social.</p>
+</div>
+</div>
+</section>
+
+<section id="servicios">
+<div class="container">
+<div class="section-title">
+<h2>Servicios</h2>
+</div>
+
+<div class="services-grid">
+<div class="service"><i class="fas fa-drafting-compass"></i> Diseño Arquitectónico e Interiorismo</div>
+<div class="service"><i class="fas fa-building"></i> Diseño Estructural</div>
+<div class="service"><i class="fas fa-bolt"></i> Instalaciones</div>
+<div class="service"><i class="fas fa-hard-hat"></i> Supervisión y Construcción</div>
+<div class="service"><i class="fas fa-cube"></i> Modelado BIM</div>
+<div class="service"><i class="fas fa-file-signature"></i> Gestión de Permisos</div>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="bg-light">
+<div class="container">
+<div class="section-title">
+<h2>Contacto</h2>
+<p>Avenida Constituyentes Pte. 940, Barrio de la Merced, Toluca, México</p>
+</div>
+
+<div class="contact">
+<div>
+<iframe src="https://www.google.com/maps?q=Avenida+Constituyentes+Pte.+940,+Toluca&output=embed" width="100%" height="250" style="border:0;"></iframe>
+</div>
+
+<div>
+<form action="https://formsubmit.co/tuemail@ejemplo.com" method="POST">
+<input type="text" name="name" placeholder="Nombre completo" required>
+<input type="email" name="email" placeholder="Correo electrónico" required>
+<textarea name="message" rows="5" placeholder="Mensaje"></textarea>
+<button class="btn">Enviar</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Fivedest | Arquitectura, Diseño e Ingeniería | Toluca, México</p>
+</footer>
+
+<a href="https://wa.me/5215513225570" class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
